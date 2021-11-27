@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="container-header"><h1 id="color-titulo">Problema del cambio</h1></header>
+    <div class="container-principal">
+        <div id="MensajeInicio"><h1><span id="MensajeCajaVacia"></span></h1></div>
+        <div class="container-formularios">
+            <div id="llenarCaja" class="container-formulario-uno">
+                <form id="formulario-uno" action="">
+                    <div>
+                        <label for="valoresCaja">¿Cuántos billetes y monedas de diferentes denominaciones ingresarás? <span>(Ingrese la información de la siguiente forma: 1000, 2; 200,3)</span></label>
+                        <input class="input-styles" id="denominaciones-cantidad" type="text" name="valoresCaja" required placeholder="denominacion, cantidad "/>
+                    </div>
+                    <div>
+                        <input type="button" value="Llenar Caja" onclick="obtenerValores()" />
+                    </div>
+                </form>
+            </div>
+            <div id="interactuar"  class="container-formulario-dos">
+                <div>Usted debe: <span id="deuda"></span></div>
+                <form id="formulario_dos" action="">
+                    <div>
+                        <label for="pagoUsuario">Usted paga con: </label>
+                        <input class="input-styles" type="number" name="pagoUsuario" id="pagoUsuario" placeholder="Cantidad con la que paga" required/>
+                    </div>
+                    <div>
+                        <input type="button" value="Pagar" onclick="pagarDeuda()" />
+                    </div>
+                </form>
+                <div>Su vuelto: <span id="vuelto"></span></div>
+                <div id="vueltoFor"><span ></span></div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer_id" class="container-footer" style="display: block;">
+        <div>
+            <p>
+                Hola, bienvenido a mi tarea de algoritmos voraces, la verdad es que el código es un código ideal,
+                el cual necesita mejorar, por lo que aquí dejo la cadena a introducir para que el algoritmo funcione correctamente:
+            </p>
+            <br>
+            <code> 1000, 1, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKHPtkWhmSN76Qvm1YfNCj_a2kBJXm9GcalQ&usqp=CAU; 500, 2, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqJw0ApGryQLT-YwHVb_30s2WL2KhhBtWhQ&usqp=CAU; 200, 3, https://i1.wp.com/www.sopitas.com/wp-content/uploads/2019/09/todos-detalles-elementos-nuevo-billete-200-pesos-destacada-1.png; 100, 4, https://i0.wp.com/www.pequenocerdocapitalista.com/wp-content/uploads/2017/03/especimen.png; 50, 5, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYroXjcyXYzrl8QKjC7SSY0hHAEXcPyT3tbJS7QBcRRBEE5dvRWvn4kfwOafXOZ0-HHY&usqp=CAU; 20, 6, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk2Q8rHSDGru7wXkiVmO9QSlZEr5GBDc9wyA&usqp=CAU; 10, 5, https://media.istockphoto.com/photos/ten-pesos-mexican-coin-with-clipping-path-picture-id184883520; 1, 50, https://i.colnect.net/f/3444/383/1-Peso.jpg </code>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
