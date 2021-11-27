@@ -81,22 +81,7 @@ img {
     background-color: #E4BAD4;
     color: #fff;
     text-align: justify;
-    height: 300px;
 }
-
-.texto-code {
-    width: 100%;
-    text-align: justify;
-}
-
-scroll-container {
-    display: block;
-    width: 100%;
-    height: 300px;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-}
-
 
 @media (max-width: 720px) {
     .container-formulario-uno {
@@ -108,6 +93,6 @@ scroll-container {
         justify-content: center;
         align-items: center;
         width: 70%;
-        height: 200px;
+        height: 150px;
     }
   }
