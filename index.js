@@ -49,21 +49,30 @@ function obtenerValores() {
 
 function pagarDeuda(){
     let div;
-    if (document.getElementById('pagoUsuario').value < totalAPagar ) {
+    let idIngreso = parseInt(document.getElementById('manualCantidad').value);
+
+    if (idIngreso > 0) {
+        totalAPagar = document.getElementById('manualCantidad').value;
+        document.getElementById('deuda').innerHTML=totalAPagar;
+    }
+    if (parseInt(document.getElementById('pagoUsuario').value) < totalAPagar ) {
         alert("La cantidad que ingresaste no cubre tú deuda");
     }else {
         let denominacionPago = document.getElementById('pagoUsuario').value;
         let cambio = denominacionPago - totalAPagar;
+        let cantidadTemp=0;
         document.getElementById('vuelto').innerHTML=cambio;
         for (let i = 0; i < cantidades.length; i++) {
+            cantidadTemp = cantidades[i].cantidad;
             do {
-                if(cantidades[i].denominacion<=cambio){
+                if(cantidades[i].denominacion<=cambio && cantidadTemp > 0){
                     div = document.getElementById("vueltoFor");
                     div.innerHTML += `<div><span>${cantidades[i].denominacion}</span><div><img src="${cantidades[i].url}"/></div></div><br>`;
                     cambio = cambio - cantidades[i].denominacion;
-                    cantidades[i].cantidad = cantidades[i].cantidad - 1;
+                    cantidadTemp= cantidadTemp-1;
                 }
-            } while (cantidades[i].denominacion<=cambio);
+            } while (cantidades[i].denominacion<=cambio && cantidadTemp > 0);
+            cantidades[i].cantidad=cantidadTemp;
         }
         if (cambio != 0) {
             div.innerHTML += `<span>Sin cambio, consulte al dueño</span><br>`;
@@ -81,5 +90,5 @@ function pagarDeuda(){
         }else {
             document.getElementById('MensajeInicio').innerHTML='';
         }
-    }, 15000);
+    }, 10000);
 }
